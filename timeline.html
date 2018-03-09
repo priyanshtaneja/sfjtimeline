@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timeline</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: red;
+    top: 75px;
+    bottom: 6px;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -14px;
+    background-color: yellow;
+    border: 3px solid darkblue;
+    top: 15px;
+    border-radius: 35%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 21px;
+    width: 0;
+    z-index: 1;
+    right: 20px; 
+    border: medium solid black ;
+    border-width: 10px 10px 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to 1he right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid black;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -16px;
+}
+
+/* The actual content */
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media all and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+ h1.TL{
+        color: black;
+        text-align: center;
+        border: 2px solid blue;
+        margin:18px 410px;
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+<div class="timeline">
+    <div class="container::after">
+    <strong><h1 class="TL">EVENT TIMELINE</h1>
+        </strong></div>
+  
+    <div class="container">
+    <p></p></div><br><br>
+    <div class="container left">
+    <div class="content">
+      <h3><strong><em>16th March : 5:30 pm </em></strong></h3>
+        <h2>TALENT HUNT</h2>
+      <p>Bring out your TALENTS!!</p>
+    </div>
+  </div>
+  
+    <div class="container right">
+    <div class="content">
+    <h3><strong><em>16th March : 2:30 pm </em></strong></h3>
+        <h2>SOLO DANCE</h2>
+      <p>Show off your MOVES...</p>    
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h3><strong><em>17th March : 12:30 pm </em></strong></h3>
+      <h2> NUKKAD NATAK</h2>
+      <p>What is the MESSAGE??//An actor must never be afraid to make a fool of himself.</p>
+         </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+        <h3><strong><em>17th March : 1:00 pm </em></strong></h3>
+      <h2> MASTER CHEF</h2>
+      <p>Can you make tastebuds fall in love with your dishes.</p>
+      
+        </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+        <h3><strong><em>17th March : 2:00 pm </em></strong></h3>
+      <h2> FACE PAINTING</h2>
+      <p>Convince a partner to play festival of colours on their faces!</p>
+      
+        </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+    <h3><strong><em>17th AND 18th March : 10:00 am </em></strong></h3>
+      <h2> GULLY CRICKET </h2>
+      <p>Let's refresh CHILDHOOD MEMORIES!</p>
+      </div>
+    </div>
+          <div class="container left">
+    <div class="content">
+    <h3><strong><em>17th AND 18th March : 11:00 am </em></strong></h3>
+      <h2> MINI MALATIA </h2>
+      <p>KILL'EM ALL!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h3><strong><em>17th AND 18th March : 10:00 am </em></strong></h3>
+      <h2> FUTSAL </h2>
+      <p>Do you have FOOTBALL freestyle skills and tricks in your blood!</p>
+    </div>
+  </div><div class="container left">
+    <div class="content">
+      <h3><strong><em>17th AND 18th March : 12:00 pm </em></strong></h3>
+      <h2> BUZZ WIRE </h2>
+      <p>Like to play with wires!</p>
+        </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h3><strong><em>17th AND 18th March : 10:30 am </em></strong></h3>
+      <h2> HASINO KA CASINO </h2>
+      <p>It's purely LUCK !! Wan'na TRY YOUR'S!!</p>
+       </div>
+  </div><div class="container left">
+    <div class="content">
+      <h3><strong><em>17th AND 18th March : 11:30 am </em></strong></h3>
+      <h2> BALLOON EVENT </h2>
+      <p>Ballon Fanatic??</p>
+    
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+    <h3><strong><em>17th AND 18th March : 11:30 am </em></strong></h3>
+      <h2> LAN GAMING </h2>
+      <p>Are you a GAMER/PLAYER??</p>
+    </div>
+  </div><div class="container left">
+    <div class="content">
+      <h3><strong><em>17th AND 18th March : 11:30 am </em></strong></h3>
+      <h2> JENGA </h2>
+      <p>One wrong move and this world comes crashing down!!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+    <h3><strong><em>18th March : 11:00 am - 1:00 am </em></strong></h3>
+      <h2> AD-MAD </h2>
+      <p>Have IDEAS for advertisements!!</p>
+    </div>
+  </div><div class="container left">
+    <div class="content">
+     <h3><strong><em>18th March : 11:30 am </em></strong></h3>
+      <h2> DEBATE </h2>
+      <p>Know how to put forth your THOUGHTS!!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+       <h3><strong><em>18th March : 11:00 am </em></strong></h3>
+      <h2> Open - MIC STORYTELLING</h2>
+      <p>Widen your IMAGINATION !!</p>
+      </div>
+  </div><div class="container left">
+    <div class="content">
+       <h3><strong><em>18th March : 12:30 pm </em></strong></h3>
+      <h2> GENERAL QUIZ </h2>
+      <p>Test your GENERAL AWARENESS!!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+       <h3><strong><em>18th March : 11:00 am </em></strong></h3>
+      <h2> MURDER MYSTERY </h2>
+      <p>Do you have detective instincts!!</p>
+      </div>
+  </div><div class="container left">
+    <div class="content">
+      <h3><strong><em>18th March : 10:00 am </em></strong></h3>
+      <h2> BEG BORROW STEEL </h2>
+      <p>ARE YOU ready to PUSH YOUR LIMITS !!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+       <h3><strong><em>18th March : 11:00 am </em></strong></h3>
+      <h2> IPL BIDDING </h2>
+      <p>Have a BUSINESSMAN'S MIND!!</p>
+    </div>
+  </div><div class="container left">
+    <div class="content">
+ <h3><strong><em>18th March : 11:00 am </em></strong></h3>
+      <h2> CODING(#offline && #online) </h2>
+      <p>Welcome CODERS!!</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+       <h3><strong><em>18th March : 11:00 am </em></strong></h3>
+      <h2> MOCK INTERVIEWS </h2>
+      <p>Wanna live FUTURE !!</p>
+    </div>
+  </div><div class="container left">
+    <div class="content">
+      <h3><strong><em>18th March : 11:00 am </em></strong></h3>
+      <h2>LFR</h2>
+      <p>Does your ROBOT follows LINE??</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+ <h3><strong><em>18th March : 11:00 am </em></strong></h3>
+      <h2> BRIDGE BUILDING </h2>
+      <p>Building bridges is no child's play !!</p>
+      </div>
+  </div>
+<div class="container"></div>
+    </div>
+<div class="timeline"></div>
+
+</body>
+</html>
